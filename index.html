@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Promo Hadiah Nasional 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="top-bar">
+        🎉 1.432 orang telah memenangkan hadiah hari ini
+    </div>
+
+    <header>
+
+        <div class="logo">
+            <i class="fa-solid fa-gift"></i>
+            Giveaway Nasional 2026
+        </div>
+
+        <div class="timer">
+            Promo Berakhir:
+            <span id="countdown">05:00</span>
+        </div>
+
+    </header>
+
+    <section class="hero">
+
+        <h1>🎉 SELAMAT! 🎉</h1>
+
+        <p>
+            Anda terpilih sebagai pengunjung beruntung hari ini.
+        </p>
+
+        <div class="prizes">
+
+            <div class="prize">
+
+                <img src="img/iphone.jpg" alt="iPhone 16">
+
+                <h3>iPhone 17 Pro Max</h3>
+
+                <p>Senilai Rp24.999.000</p>
+
+            </div>
+
+            <div class="prize">
+
+                <img src="img/yamaha.jpg" alt="Yamaha">
+
+                <h3>Yamaha Nmax</h3>
+
+                <p>Senilai Rp33.790.000</p>
+
+            </div>
+
+            <div class="prize">
+
+                <img src="img/uang.jpg" alt="iPhone 16">
+
+                <h3>Uang Cash</h3>
+
+                <p>Senilai Rp5.999.000</p>
+
+            </div>
+
+            <div class="prize">
+
+                <img src="img/tv.jpg" alt="tv">
+
+                <h3>Smart TV</h3>
+
+                <p>Senilai Rp1.700.000</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="running-container">
+        <div id="runningText" class="running-text"></div>
+            🎉 Rina dari Jakarta memenangkan iPhone 17 Pro Max |
+            🎉 Budi dari Semarang memenangkan Yamaha NMAX |
+            🎉 Siti dari Surabaya memenangkan Rp5.999.000 |
+            🎉 Agus dari Bandung memenangkan MacBook Air |
+            🎉 Dodi dari Solo memenangkan Smart TV Samsung
+        </div>
+    </div>
+
+
+    <section class="roulette-section">
+
+        <h2>Putar Roda Keberuntungan</h2>
+
+        <div id="wheel"></div>
+
+        <button id="spinBtn" onclick="spinWheel()">
+            PUTAR SEKARANG
+        </button>
+
+    </section>
+
+
+    <section id="claimSection" class="hidden">
+
+        <div class="claim-box">
+
+            <h2>🎁 Klaim Hadiah</h2>
+
+            <input id="nama" placeholder="Nama Lengkap">
+
+            <input id="hp" placeholder="Nomor HP">
+
+            <input id="alamat" placeholder="Alamat">
+
+            <input id="email" placeholder="Email">
+
+            <button onclick="submitData()">
+                Klaim Hadiah
+            </button>
+
+        </div>
+
+    </section>
+
+    <section id="loadingPage" class="hidden">
+
+        <div class="claim-box">
+
+            <h2>Memverifikasi Data...</h2>
+
+            <div class="progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+            <p id="progressText">
+                0%
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="educationSection" class="hidden">
+
+        <div class="education-box">
+
+            <h1>⚠️ SIMULASI PENIPUAN</h1>
+
+            <p>
+                Selamat, Anda baru saja mengalami simulasi website penipuan.
+            </p>
+
+            <div class="data-preview">
+
+                <h3>Data yang Anda Masukkan</h3>
+
+                <p id="showNama"></p>
+                <p id="showHP"></p>
+                <p id="showAlamat"></p>
+                <p id="showEmail"></p>
+
+            </div>
+
+            <div class="warning">
+
+                <h3>Bahaya Jika Ini Website Asli</h3>
+
+                <ul>
+                    <li>Data pribadi dapat dicuri.</li>
+                    <li>Nomor HP dapat digunakan untuk spam.</li>
+                    <li>Email dapat menjadi target phishing.</li>
+                    <li>Alamat dapat disalahgunakan.</li>
+                    <li>Identitas dapat dipakai untuk penipuan.</li>
+                </ul>
+
+            </div>
+
+            <div class="education">
+
+                <h3>🎓 Pesan Edukasi</h3>
+
+                <p>
+                    Website hadiah palsu sering menggunakan teknik yang sama:
+                    menawarkan hadiah besar, membuat korban terburu-buru,
+                    lalu meminta data pribadi.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="notification"></div>
+
+    <!-- POPUP PEMENANG -->
+
+    <div id="winnerModal" class="modal">
+
+        <div class="modal-content">
+
+            <h1>🎉 SELAMAT 🎉</h1>
+
+            <img src="img/iphone.jpg" alt="iPhone">
+
+            <h2>iPhone 16 Pro Max</h2>
+
+            <p>Senilai Rp24.999.000</p>
+
+            <button onclick="closeWinner()">
+                Klaim Hadiah
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <div id="toastContainer"></div>
+
+</body>
+
+</html>
